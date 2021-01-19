@@ -1,0 +1,50 @@
+<form [formGroup]='form'>
+  <h1>PERFIL DO INVESTIDOR - QUESTIONÁRIO</h1>
+  <h3>1- Qual o seu comportamento em relação aos investimentos?</h3>
+  <mat-radio-group formControlName='comportamentoInvestidor'>
+    <mat-radio-button *ngFor="let item of formApi.comportamentoInvestidor() | async" [value]="item">{{item}}</mat-radio-button>
+  </mat-radio-group>
+  <h3>2- Por quanto tempo você deseja manter os seus investimentos?</h3>
+  <mat-radio-group formControlName='tempoDeInvestimento'>
+    <mat-radio-button *ngFor="let item of formApi.tempoDeInvestimento() | async" [value]="item">{{item}}</mat-radio-button>
+  </mat-radio-group>
+  <h3>3- Quantos % desses investimentos você pode precisar por 1 ano?</h3>
+  <mat-radio-group formControlName='necessidadeDeGasto'>
+    <mat-radio-button *ngFor="let item of formApi.necessidadeDeGasto()| async " [value]="item">{{item}}</mat-radio-button>
+  </mat-radio-group>
+  <h3>4- Qual a sua familiaridade com os tipos de investimentos abaixo? <br>Leve em consideração o valor aplicado nos últimos 2 anos.</h3>
+  <mat-form-field appearance="fill">
+    <mat-select formControlName='titulos'>
+    <mat-option *ngFor="let item of formApi.titulos() | async" [value]="item">{{item}}</mat-option>
+    </mat-select>
+    <mat-label>
+      TÍTULOS DE RENDA FIXA OU TESOURO DIRETO
+    </mat-label>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-select formControlName='fundos'>
+      <mat-option *ngFor="let item of formApi.fundos() | async" [value]="item">{{item}}</mat-option>
+    </mat-select>
+    <mat-label>
+      FUNDOS DE INVESTIMENTO
+    </mat-label>
+  </mat-form-field>
+  <br><br>
+  <mat-form-field appearance="fill">
+    <mat-select formControlName='acoes'>
+      <mat-option *ngFor="let item of formApi.acoes() | async" [value]="item">{{item}}</mat-option>
+    </mat-select>
+    <mat-label>
+      AÇÕES A VISTA
+    </mat-label>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-select formControlName='aluguel'>
+      <mat-option *ngFor="let item of formApi.aluguel() | async" [value]="item">{{item}}</mat-option>
+    </mat-select>
+    <mat-label>
+      ALUGUEL DE AÇÕES, TERMOS, OPÇÕES E FUTUROS
+    </mat-label>
+  </mat-form-field><br><br>
+  <button routerLink='/home' mat-raised-button color="primary">VOLTAR</button> <button routerLink= '/done' mat-raised-button color="primary" [disabled]="form.invalid">SALVAR</button>
+</form>
