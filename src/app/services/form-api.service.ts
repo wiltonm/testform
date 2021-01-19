@@ -9,8 +9,9 @@ import { Observable } from 'rxjs';
 export class FormApiService {
 
   constructor(private http: HttpClient) { }
-  acoes(): Observable<{ result: string[] }> {
-    return this.http.get<{ result: string[] }>('https://api.npoint.io/fc154c36070cf7fd0a96/value/', { headers: new HttpHeaders().set('Accept', 'application/json'), responseType: 'json' });
+
+  acoes(): Observable<string[]> {
+    return this.http.get<string[]>('https://api.npoint.io/fc154c36070cf7fd0a96/value/', { headers: new HttpHeaders().set('Accept', 'application/json'), responseType: 'json' });
   }
   aluguel(): Observable<string[]> {
     return this.http.get<string[]>('https://api.npoint.io/e76d4b1ef8e4b6c0cbb3/value/', { headers: new HttpHeaders().set('Accept', 'application/json'), responseType: 'json' })
