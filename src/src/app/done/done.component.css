@@ -1,0 +1,10 @@
+:host {
+  text-align: center;
+  margin-top: 36px;
+}
+img {
+  width: 600px;
+  height: 300px;
+  position: relative;
+  padding-right: 10px ;
+}
