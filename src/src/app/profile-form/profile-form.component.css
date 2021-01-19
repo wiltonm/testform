@@ -1,0 +1,12 @@
+:host {
+  text-align: center;
+  background-color: beige;
+}
+.mat-form-field {
+  margin-right: 10%;
+  width: 30%;
+}
+button {
+  margin-right: 5%;
+  text-align: right;
+}

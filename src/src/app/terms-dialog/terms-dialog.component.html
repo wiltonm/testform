@@ -1,0 +1,11 @@
+<div mat-dialog-title>
+  <button mat-icon-button [mat-dialog-close] = "false">
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<div mat-dialog-content> 
+  <h1>Termo</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.<br> Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris<br> nisi ut aliquip ex ea commodo consequat.</p>
+    <p><mat-checkbox [(ngModel)]= "termosAceitos" >Li e aceito os termos e condições acima</mat-checkbox><br> 
+  <button mat-raised-button color="primary" [mat-dialog-close] = "true" [disabled] = "!termosAceitos" > OK, ENTENDI</button></p> 
+</div>
